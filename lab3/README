@@ -1,12 +1,12 @@
-# BÁO CÁO LAB 3 - NHẬN DIỆN VÀ ỨNG PHÓ CÁC MỐI ĐE DỌA ĐẾN AN TOÀN THÔNG TIN
+ BÁO CÁO LAB 3 - NHẬN DIỆN VÀ ỨNG PHÓ CÁC MỐI ĐE DỌA ĐẾN AN TOÀN THÔNG TIN
 
-## THÔNG TIN SINH VIÊN
+ THÔNG TIN SINH VIÊN
 Họ và tên: Nguyễn Quốc Yên
 Lớp: 11CNPM2
-MSSV: [Điền MSSV của bạn vào đây]
+MSSV: 1150080164
 Tên lab: Lab 3 - Nhận diện và ứng phó các mối đe dọa đến an toàn thông tin.
 
-## PHIÊN BẢN VÀ CÁCH DỰNG MÔI TRƯỜNG
+PHIÊN BẢN VÀ CÁCH DỰNG MÔI TRƯỜNG
 Phiên bản môi trường: VMware Workstation Pro 26H1, máy ảo Windows 11 25H2 x64 (OS build 26200.9445).
 
 Cách dựng môi trường: 
@@ -15,7 +15,7 @@ Cách dựng môi trường:
 3. Tạo cấu trúc thư mục làm việc chuẩn tại C:\LAB3 và giải nén gói tài nguyên lab3_assets chứa các kịch bản thử nghiệm.
 4. Chạy script PowerShell thu thập Baseline ban đầu của hệ thống (Defender, Firewall, Network) trước khi thực hiện các bài kiểm thử.
 
-## CÁC TÌNH HUỐNG ĐÃ THỰC HIỆN VÀ KẾT QUẢ
+ CÁC TÌNH HUỐNG ĐÃ THỰC HIỆN VÀ KẾT QUẢ
 1. Tình huống 1: Xác định tài sản, lỗ hổng, mối đe dọa, lập Risk Register và phân loại rủi ro (Kết quả: PASS).
 2. Tình huống 2: Kiểm chứng chu trình phát hiện mã độc của Microsoft Defender bằng chuỗi EICAR (Kết quả: PASS).
 3. Tình huống 3: Phân tích tấn công mật khẩu và keylogging qua Event ID 4624/4625/4648 (Kết quả: PASS).
@@ -25,7 +25,7 @@ Cách dựng môi trường:
 7. Tình huống 7: Phân tích mẫu email Phishing offline và phân loại các kỹ thuật Social Engineering (Kết quả: PASS).
 8. Bước cuối: Cô lập, cleanup dọn dẹp các tiến trình/registry đã tạo, phục hồi máy ảo và tính mã băm SHA-256 cho toàn bộ bằng chứng (Kết quả: PASS).
 
-## LỖI GẶP PHẢI VÀ CÁCH KHẮC PHỤC
+ LỖI GẶP PHẢI VÀ CÁCH KHẮC PHỤC
 Lỗi sai đường dẫn tài nguyên: Trong quá trình thao tác, các script cấu hình PowerShell báo lỗi chữ đỏ không tìm thấy dữ liệu mẫu (Cannot find path 'C:\LAB3\lab3_assets' because it does not exist). Nguyên nhân là do thư mục làm việc thực tế được chuyển sang ổ D (D:\CNPM2\hUYNH\Lab3) hoặc ổ mạng Z, khiến cấu trúc thư mục bị lồng nhau sai quy cách.
 
 Cách khắc phục: Đã thực hiện copy thủ công toàn bộ dữ liệu từ thư mục chia sẻ vào đúng đường dẫn chuẩn C:\LAB3\lab3_assets như yêu cầu của script. Đồng thời, đối với các trường hợp cần lưu file ở ổ D, đã sử dụng lệnh mklink /J C:\LAB3 "D:\CNPM2\hUYNH\Lab3" để tạo liên kết tượng trưng (Junction), giúp hệ thống nhận diện file chính xác mà không phải can thiệp sửa mã nguồn của giảng viên.
