@@ -8,13 +8,14 @@ Lớp: 11-CNPM2
 
 Video Demo: https://youtu.be/to1NTGV_j88
 
- Mục tiêu
 
-Xây dựng hệ thống bảo vệ và lọc nội dung web (Web Protection) bằng cách kết hợp Tường lửa pfSense và Máy chủ Web Proxy. Hệ thống đảm bảo mọi luồng truy cập từ người dùng (Client) phải đi qua Proxy để kiểm duyệt, đồng thời ngăn chặn tuyệt đối các hành vi vượt rào (bypass) ra Internet trực tiếp.
+    Mục tiêu
 
- Mô hình & Công nghệ
+ Xây dựng hệ thống bảo vệ và lọc nội dung web (Web Protection) bằng cách kết hợp Tường lửa pfSense và Máy chủ Web Proxy. Hệ thống đảm bảo mọi luồng truy cập từ người dùng (Client) phải đi qua Proxy để kiểm duyệt, đồng thời ngăn chặn tuyệt đối các hành vi vượt rào (bypass) ra Internet trực tiếp.
 
-pfSense Firewall: Đóng vai trò Gateway định tuyến, ép luồng dữ liệu mạng qua Proxy (Port 8080) và chặn truy cập web trực tiếp (Port 80, 443).
+  Mô hình & Công nghệ
+
+ pfSense Firewall: Đóng vai trò Gateway định tuyến, ép luồng dữ liệu mạng qua Proxy (Port 8080) và chặn truy cập web trực tiếp (Port 80, 443).
 
 Web Proxy Server (Ubuntu Server 24.04):
 
@@ -31,7 +32,7 @@ Môi trường phụ trợ: Domain Controller (Windows Server), DMZ Web Server (
 Hệ thống đã triển khai và kiểm chứng thành công 6 kịch bản chính:
 
 Truy cập hợp lệ (Baseline): Các trang giáo dục hoặc nằm trong danh sách trắng (Allow-list) truy cập bình thường.
-
+ 
 Khóa cứng (Hard Block): Chặn tuyệt đối (Access Denied) các trang thuộc danh mục cấm (Geo-IP, Job Search, Game).
 
 Cảnh báo & Vượt rào tạm thời (Temporary Bypass): Cảnh báo rủi ro với các trang nhạy cảm (Vũ khí, Tôn giáo) nhưng cho phép người dùng tự bấm xác nhận để truy cập tạm thời (5 phút).
